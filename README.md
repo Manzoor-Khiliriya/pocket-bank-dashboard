@@ -1,16 +1,101 @@
-# React + Vite
+# 🏦 Pocket Bank Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive **Mini Banking Dashboard** built with **React** that allows users to view their balance, filter transactions, and simulate money transfers with real-time UI updates.
 
-Currently, two official plugins are available:
+This project was developed as part of a frontend assignment to demonstrate **component-based architecture, state management, form validation, and clean UI/UX**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
+https://pocket-bank-dashboard-murex.vercel.app/
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### ✅ Dashboard
+- Displays **current balance**
+- Shows a list of **mock transactions**
+- Each transaction includes:
+  - Date
+  - Description
+  - Amount
+  - Type (Credit / Debit)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✅ Transaction Filter
+- Filter transactions by:
+  - **All**
+  - **Income**
+  - **Expenses**
+
+### ✅ Transfer Money
+- Form fields:
+  - Recipient Name
+  - Amount
+  - Date
+- **Validations**:
+  - Amount must be greater than 0
+  - Cannot transfer more than available balance
+  - Transfer date cannot be in the past
+- **UX Enhancements**:
+  - Disabled button during submission
+  - Loading state (1–2 seconds simulation)
+  - Success and error messages
+- Updates balance and transaction list **without page refresh**
+
+### ✅ UI / UX
+- Modern fintech-style UI
+- Fully **responsive** (mobile & desktop)
+- Clean card-based layout
+- Accessible and user-friendly design
+
+---
+
+## 🛠 Tech Stack
+
+- **React.js** (with Vite)
+- **JavaScript**
+- **Tailwind CSS**
+- Local state management (`useState`)
+- No backend (frontend-focused as per assignment)
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+├─ components/
+│  ├─ BalanceCard.jsx
+│  ├─ FilterTabs.jsx
+│  ├─ Footer.jsx
+│  ├─ Header.jsx
+│  ├─ TransactionList.jsx
+│  └─ TransferForm.jsx
+│
+├─ data/
+│  └─ transactions.js
+│
+├─ utils/
+│  ├─ calculateInitialBalance.js
+│  ├─ formatCurrency.js
+│  ├─ transferService.js
+│  └─ validateTransfer.js
+│
+├─ App.jsx
+└─ main.jsx
+```
+---
+
+## ▶️ Getting Started (Run Locally)
+
+```bash
+# Clone the repository
+git clone https://github.com/Manzoor-Khiliriya/pocket-bank-dashboard
+
+# Navigate to project
+cd pocket-bank
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
